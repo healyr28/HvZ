@@ -1,0 +1,203 @@
+basePath: /
+definitions:
+  main.Login:
+    properties:
+      name:
+        type: string
+      password:
+        type: string
+    type: object
+  main.Player:
+    properties:
+      cures:
+        type: integer
+      extensions:
+        type: integer
+      id:
+        type: string
+      kills:
+        type: integer
+      last_kill:
+        type: string
+      last_tagged:
+        type: string
+      name:
+        type: string
+      revives:
+        type: integer
+      state:
+        type: integer
+    type: object
+info:
+  contact: {}
+  description: This is the Swagger documentation for DCU Games Society's 2022 Humans
+    Vs Zombies event.
+  title: DCU Games Society Humans Vs Zombies
+  version: "1.0"
+paths:
+  /cure:
+    get:
+      description: Cures a zombie or infected human
+      parameters:
+      - description: Target ID
+        in: path
+        name: target
+        required: true
+        type: string
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: User is not logged in
+          schema:
+            type: string
+        "403":
+          description: No cures available
+          schema:
+            type: string
+        "404":
+          description: Target does not exist
+          schema:
+            type: string
+        "409":
+          description: Target is not a zombie
+          schema:
+            type: string
+      summary: Cure
+  /kill:
+    get:
+      description: Kills a zombie if user is authenticated as a human. Gives zombie
+        target the stunned state
+      parameters:
+      - description: Target ID
+        in: path
+        name: target
+        required: true
+        type: string
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: User is not logged in
+          schema:
+            type: string
+        "403":
+          description: Killer is not a human
+          schema:
+            type: string
+        "404":
+          description: Target does not exist
+          schema:
+            type: string
+        "409":
+          description: Target is not a zombie
+          schema:
+            type: string
+      summary: Kill
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Login
+      parameters:
+      - description: Player login
+        in: body
+        name: info
+        required: true
+        schema:
+          $ref: '#/definitions/main.Login'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Player'
+        "400":
+          description: Bad Request
+        "403":
+          description: Forbidden
+      summary: Login
+  /me:
+    get:
+      description: Shows user information
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Player'
+        "401":
+          description: User is not logged in
+          schema:
+            type: string
+      summary: Me
+  /revive:
+    get:
+      description: Revives a stunned zombie
+      parameters:
+      - description: Target ID
+        in: path
+        name: target
+        required: true
+        type: string
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: User is not logged in
+          schema:
+            type: string
+        "403":
+          description: No revives available
+          schema:
+            type: string
+        "404":
+          description: Target does not exist
+          schema:
+            type: string
+        "409":
+          description: Target is not stunned
+          schema:
+            type: string
+      summary: Revive
+  /tag:
+    get:
+      description: Tag a human as a zombie. Gives target the infected state if user
+        is a zombie or core zombie.
+      parameters:
+      - description: Target ID
+        in: path
+        name: target
+        required: true
+        type: string
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: User is not logged in
+          schema:
+            type: string
+        "403":
+          description: Tagger is not a zombie
+          schema:
+            type: string
+        "404":
+          description: Target does not exist
+          schema:
+            type: string
+        "409":
+          description: Target is not human
+          schema:
+            type: string
+      summary: Tag
+swagger: "2.0"
