@@ -1,0 +1,28 @@
+div.map {
+  position: relative;
+  left: 50vw;
+  margin-left: -480px;
+  margin-bottom: 20px;
+  height: 540px;
+  width: 960px;
+  display: inline-block;
+  overflow: hidden;
+  border-style: solid;
+  border-radius: 15px;
+  border-width: 5px;
+  border-color: #57d4eb;
+}
+
+img.map {
+  transform: scale(1.5);
+  position: relative;
+}
+
+img.airship {
+  top: 0px;
+  margin: 0px;
+  transform: scale(1.5);
+  position: absolute;
+  top: 270px;
+  left: 480px;
+}

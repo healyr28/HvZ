@@ -1,0 +1,107 @@
+/* Div Seperator, used tutorial: https://youtu.be/zG85ES3Duxo */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.content {
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(70, 69, 62, 0.685);
+}
+
+.main {
+    background-color: #000000;
+    background-image: url(../img/blackbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main p {
+    color: #e8e8e8;
+    font-size: 18px;
+    margin: 0px 30px;
+    padding: 15px 0px;
+  }
+
+.homecontainer {
+    background-color: rgb(24, 24, 24);
+    width: 90%;
+    margin: 5% auto;
+    display: flex;
+    padding: 20px;
+}
+
+a:hover {
+    flex: 10;
+    background-color: bisque;
+    filter: brightness(100%);
+}
+
+a {
+    display: block;
+    flex: 1;
+    height: 500px;
+    padding: 25px;
+    border: rgb(24, 24, 24) solid 3px;
+    flex: 1;
+    transition-duration: 1s;
+    filter: brightness(50%);
+}
+
+.genshin {
+    background-image: url(../img/homegenshin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.deadbydaylight {
+    background-image: url(../img/homedbd.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.finalfantasy {
+    background-image: url(../img/homeff.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.guiltygear {
+    background-image: url(../img/homegg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.perfectworld {
+    background-image: url(../img/homepw.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reddead {
+    background-image: url(../img/homerdr.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homeimg {
+    width: 64px;
+    height: 64px;
+    border: blue;    
+}
+
+.homeimg:hover {
+    filter: opacity(50%);
+}

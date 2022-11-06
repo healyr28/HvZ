@@ -1,0 +1,46 @@
+.content {
+  margin: 0px;
+  margin-bottom: 40px;
+  max-width: 640;
+  border-radius: 20px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+#videoFlex {
+  flex-direction: column;
+  -webkit-user-select: none;     
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+iframe {
+  margin: 40px;
+}
+
+#openSli {
+  color: #402fbd;
+  cursor: pointer;
+}
+
+#right {
+  position: absolute;
+  top: 500px;
+  right: 0px;
+  margin-right: 7%;
+  font-size: 50;
+  cursor: pointer;
+}
+
+#left {
+  position: absolute;
+  top: 500px;
+  left: 0px;
+  margin-left: 7%;
+  font-size: 50;
+  cursor: pointer;
+}
