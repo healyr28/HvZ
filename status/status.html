@@ -27,9 +27,11 @@
 
     <div class="sidebar">
       <div id="closeBut"><img src="../img/x.png" alt="Close Button"></div>
-      <ul>
-		<li>Sneak login system here</li>
-        <li><a href="https://www.youtube.com/watch?v=UIp6_0kct_U">Log in</a></li>
+      <ul id="loglist">
+        <li id="badlogin" style="color: red;"></li>
+        <li><label>Username<input id="username" placeholder="Username"></label></li>
+        <li><label>Password<input id="passwd" placeholder="Password" type="password"></label></li>
+        <li><button type="button" id="logBut">Log In!</button></li>
       </ul>
     </div>
 
@@ -38,19 +40,16 @@
       <div class="center">
         <div class="content">
           <div class="center" id="videoFlex">
-            <iframe id="player" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/RHMHrLPIgcY?rel=0&amp;autoplay=1&mute=1&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>Gonna update this part to have all of the funky app stuff</p>
+            <p>Please log in with the sidebar to interact with the game!</p>
           </div>
         </div>
       </div>
     </section>
 
     <footer>
-      <p>2022 DCU Games Society | Implemented by Cost, Skins and Robert</p>
+      <p>2022 DCU Games Society | Implemented by Cost, CorruptDTA, Skins and Robert</p>
 	</footer>
     <script src="../scripts/sidebar.js"></script>
-    <script src="https://www.youtube.com/player_api"></script>
-    <script src="scripts/legacy.js"></script>
   </body>
 
 </html>
